@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Abdelkader Elassali — AI &amp; Data Engineer</title>
+  <meta name="description" content="Portfolio of Abdelkader Elassali — 5th-year Engineering Student at EMSI Casablanca specializing in AI, Data Science &amp; Multi-Agent Systems. Seeking 2026 PFE Internship."/>
+  
+  <!-- Google Fonts: Space Mono (retro-tech terminal headers) & Inter (crisp body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css"/>
+  
+  <!-- Three.js for 3D interactive constellation canvas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+  <!-- 3D Constellation Canvas Background -->
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- STICKY NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-brand">
+        <span class="brand-text">AE<span class="dot">.</span></span>
+      </a>
+
+      <nav class="nav-center">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#education" class="nav-link">Education</a></li>
+          <li><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="nav-socials">
+          <a href="https://github.com/abdelkaderelassali" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub" title="GitHub">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.37.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </a>
+          <a href="https://linkedin.com/in/abdelkader-elassali" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn" title="LinkedIn">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0z"/>
+            </svg>
+          </a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="home">
+    <div class="hero-content">
+      <h1 class="hero-name">Abdelkader Elassali</h1>
+      
+      <div class="hero-role-wrapper">
+        <span class="hero-role" id="typewriter-text">AI &amp; Data Engineer</span><span class="typewriter-cursor">|</span>
+      </div>
+
+      <p class="hero-tagline">
+        Engineering useful AI systems, multi-agent architectures &amp; scalable data pipelines.
+      </p>
+
+      <a href="mailto:abdoelassali66@gmail.com" class="hero-email-link">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+          <path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+        </svg>
+        <span>abdoelassali66@gmail.com</span>
+      </a>
+
+      <!-- Quick Badges Row -->
+      <div class="hero-badges">
+        <span class="badge-item">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+          Casablanca, Morocco
+        </span>
+        <span class="badge-item badge-highlight">
+          <span class="status-dot"></span>
+          Open to Opportunities
+        </span>
+        <span class="badge-item">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+          Willing to Relocate &amp; Remote
+        </span>
+        <span class="badge-item badge-auth">
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/></svg>
+          PFE Internship 2026
+        </span>
+      </div>
+
+      <!-- Hero Actions -->
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="../CV_abdelkader_PFE-1.pdf" download class="btn btn-secondary">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+            <path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/>
+          </svg>
+          View Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT ME SECTION -->
+  <section class="section about-section" id="about">
+    <div class="section-container">
+      <h2 class="section-title">About Me</h2>
+      
+      <div class="about-card">
+        <p>
+          I am a 5th-year state engineering student at <strong>EMSI Casablanca</strong> specializing in 
+          <strong>Artificial Intelligence &amp; Data Science (IADC)</strong>, built upon a rigorous foundation 
+          in computer systems and software engineering.
+        </p>
+        <p>
+          These days I like taking a project all the way: messy data in, high-performance product out. 
+          My recent research at the <strong>EMSI Research &amp; Innovation Lab</strong> is a great example: I designed a 
+          cooperative multi-agent architecture using <strong>LangGraph</strong> and local <strong>Llama 3 (Ollama)</strong> 
+          with deterministic Python validation routines, achieving up to a measured 
+          <span class="text-cyan">57% token reduction</span>, backed by 137 unit tests and containerized in Docker.
+        </p>
+        <p>
+          I also engineered a 4-expert autonomous logistics orchestrator with real-time RAG (LlamaIndex + ChromaDB), 
+          and was awarded <strong>1st Prize</strong> at the EMSI Summer Internship Competition for enterprise LMS infrastructure deployment.
+        </p>
+        <p class="about-cta">
+          I'm actively looking for a <strong>full-time 2026 PFE internship</strong> in AI, Machine Learning, or Data Engineering roles. 
+          Have a challenging dataset, a multi-agent idea, or an open position? 
+          <a href="#contact" class="link-cyan">Drop me an email.</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECHNICAL ARSENAL SECTION -->
+  <section class="section skills-section" id="skills">
+    <div class="section-container">
+      <h2 class="section-title">Technical Arsenal</h2>
+      <p class="section-subtitle">A collection of the tools and technologies I use to turn data into value.</p>
+
+      <div class="skills-grid">
+        <!-- Card 1 -->
+        <div class="skill-group-card">
+          <h3 class="skill-group-title">Programming &amp; Databases</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Python</span>
+            <span class="skill-pill">C / C++</span>
+            <span class="skill-pill">Java</span>
+            <span class="skill-pill">SQL</span>
+            <span class="skill-pill">PostgreSQL</span>
+            <span class="skill-pill">MySQL</span>
+            <span class="skill-pill">MongoDB</span>
+            <span class="skill-pill">ChromaDB</span>
+            <span class="skill-pill">Neo4j</span>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="skill-group-card">
+          <h3 class="skill-group-title">Machine Learning &amp; NLP</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Scikit-learn</span>
+            <span class="skill-pill">TensorFlow</span>
+            <span class="skill-pill">PyTorch</span>
+            <span class="skill-pill">Random Forest</span>
+            <span class="skill-pill">ResNet50</span>
+            <span class="skill-pill">SVD</span>
+            <span class="skill-pill">TF-IDF</span>
+            <span class="skill-pill">NLP</span>
+            <span class="skill-pill">Pandas &amp; NumPy</span>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="skill-group-card">
+          <h3 class="skill-group-title">Generative AI &amp; Agents</h3>
+          <div class="skill-pills">
+            <span class="skill-pill pill-cyan">LangChain</span>
+            <span class="skill-pill pill-cyan">LangGraph</span>
+            <span class="skill-pill pill-cyan">LlamaIndex</span>
+            <span class="skill-pill pill-cyan">RAG Pipelines</span>
+            <span class="skill-pill">Ollama</span>
+            <span class="skill-pill">Llama 3 / 3.1</span>
+            <span class="skill-pill">Groq API</span>
+            <span class="skill-pill pill-cyan">Multi-Agent Systems (MAS)</span>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="skill-group-card">
+          <h3 class="skill-group-title">Cloud, Big Data &amp; MLOps</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Apache Kafka</span>
+            <span class="skill-pill">Apache Airflow</span>
+            <span class="skill-pill">MinIO</span>
+            <span class="skill-pill">Docker</span>
+            <span class="skill-pill">FastAPI</span>
+            <span class="skill-pill">Flask</span>
+            <span class="skill-pill">REST APIs</span>
+            <span class="skill-pill">Linux</span>
+            <span class="skill-pill">Git</span>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="skill-group-card">
+          <h3 class="skill-group-title">Data Visualization &amp; Front-End</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Leaflet (GIS)</span>
+            <span class="skill-pill">React</span>
+            <span class="skill-pill">Vite</span>
+            <span class="skill-pill">Next.js</span>
+            <span class="skill-pill">Matplotlib</span>
+            <span class="skill-pill">Seaborn</span>
+            <span class="skill-pill">Nanostores</span>
+            <span class="skill-pill">JavaScript</span>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="skill-group-card">
+          <h3 class="skill-group-title">Core Skills &amp; Methodologies</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Token Optimization</span>
+            <span class="skill-pill">EDA &amp; Cleaning</span>
+            <span class="skill-pill">Feature Engineering</span>
+            <span class="skill-pill">137 Unit Tests</span>
+            <span class="skill-pill">A/B Testing</span>
+            <span class="skill-pill">Deterministic Validation</span>
+            <span class="skill-pill">Agile PM</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURED PROJECTS SECTION -->
+  <section class="section projects-section" id="projects">
+    <div class="section-container">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">Commercial deployments, research benchmarks, and production systems.</p>
+
+      <!-- Category Filter Tabs -->
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="llm">Multi-Agent &amp; LLM</button>
+        <button class="filter-btn" data-filter="ml">Machine Learning</button>
+        <button class="filter-btn" data-filter="de">Data Engineering</button>
+        <button class="filter-btn" data-filter="cv">Computer Vision</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="projects-grid">
+        
+        <!-- Project 1 -->
+        <div class="project-card" data-category="llm">
+          <div class="project-img-wrapper">
+            <img src="screenshots/clean/token1.jpg" alt="Token Efficient Multi-Agent System Dashboard" loading="lazy"/>
+            <div class="project-badge">PFA Project · EMSI Lab</div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span>LangGraph</span>
+              <span>Llama 3</span>
+              <span>FastAPI</span>
+              <span>Docker</span>
+            </div>
+            <h3 class="project-title">Token Efficient — Multi-Agent LLM System</h3>
+            <p class="project-desc">
+              Cooperative multi-agent system with deterministic Python validation achieving a measured 
+              <strong>57% token reduction</strong>. 137 unit tests, reproducible benchmark suite, FastAPI microservice, and Docker.
+            </p>
+            <div class="project-links">
+              <a href="../rapport_last.pdf" target="_blank" rel="noopener noreferrer" class="link-action">
+                <span>View Report</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+              </a>
+              <a href="https://github.com/abdelkaderelassali" target="_blank" rel="noopener noreferrer" class="link-action">
+                <span>GitHub</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+              </a>
+              <button class="link-action btn-story" data-project="token">
+                <span>Project Story</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="project-card" data-category="llm">
+          <div class="project-img-wrapper">
+            <img src="screenshots/clean/logistics.jpg" alt="Smart Logistics Multi-Agent System" loading="lazy"/>
+            <div class="project-badge">MAS &amp; RAG</div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span>LangGraph</span>
+              <span>LlamaIndex</span>
+              <span>ChromaDB</span>
+              <span>Groq</span>
+              <span>Leaflet</span>
+            </div>
+            <h3 class="project-title">Smart Logistics Multi-Agent Orchestrator</h3>
+            <p class="project-desc">
+              4-expert MAS system with LangGraph for autonomous logistics decision-making. Real-time RAG pipeline with ChromaDB 
+              and interactive geospatial tracking dashboard via Leaflet.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/abdelkaderelassali" target="_blank" rel="noopener noreferrer" class="link-action">
+                <span>GitHub</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+              </a>
+              <button class="link-action btn-story" data-project="logistics">
+                <span>Project Story</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="project-card" data-category="cv">
+          <div class="project-img-wrapper">
+            <img src="screenshots/clean/smartreco.jpg" alt="SmartReco Hybrid Recommendation Engine" loading="lazy"/>
+            <div class="project-badge">Deep Learning &amp; CV</div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span>Python</span>
+              <span>ResNet50</span>
+              <span>SVD</span>
+              <span>Flask</span>
+              <span>React</span>
+            </div>
+            <h3 class="project-title">SmartReco — Hybrid Recommendation Engine</h3>
+            <p class="project-desc">
+              Hybrid engine combining collaborative filtering (SVD) and content-based (TF-IDF) with CNN ResNet50 visual similarity search. 
+              Decoupled React/Vite + Flask architecture with Nanostores.
+            </p>
+            <div class="project-links">
+              <a href="../rapport_smartreco.pdf" target="_blank" rel="noopener noreferrer" class="link-action">
+                <span>View Report</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+              </a>
+              <a href="https://github.com/abdelkaderelassali" target="_blank" rel="noopener noreferrer" class="link-action">
+                <span>GitHub</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+              </a>
+              <button class="link-action btn-story" data-project="smartreco">
+                <span>Project Story</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="project-card" data-category="ml">
+          <div class="project-img-wrapper">
+            <img src="screenshots/clean/churn.jpg" alt="Customer Churn Prediction Pipeline" loading="lazy"/>
+            <div class="project-badge">Predictive ML</div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span>Python</span>
+              <span>Scikit-Learn</span>
+              <span>Pandas</span>
+              <span>Random Forest</span>
+            </div>
+            <h3 class="project-title">Customer Churn Prediction Pipeline</h3>
+            <p class="project-desc">
+              Full-cycle ML pipeline on 10,000+ records: exploratory data analysis, feature engineering, and robust classification 
+              reaching <strong>85% accuracy</strong> for proactive churn prevention.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/abdelkaderelassali" target="_blank" rel="noopener noreferrer" class="link-action">
+                <span>GitHub</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+              </a>
+              <button class="link-action btn-story" data-project="churn">
+                <span>Project Story</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 5 -->
+        <div class="project-card" data-category="de">
+          <div class="project-img-wrapper">
+            <img src="screenshots/clean/press.jpg" alt="Data Engineering Pipeline Press Analysis" loading="lazy"/>
+            <div class="project-badge">Big Data &amp; ETL</div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span>Apache Kafka</span>
+              <span>Apache Airflow</span>
+              <span>MinIO</span>
+              <span>Python</span>
+            </div>
+            <h3 class="project-title">Data Engineering Pipeline — Press Intelligence</h3>
+            <p class="project-desc">
+              Distributed architecture for press data extraction via Python scrapers. Airflow orchestration, 
+              real-time Kafka streaming, and MinIO object storage data lake.
+            </p>
+            <div class="project-links">
+              <a href="../presentation_press_bigdata.pdf" target="_blank" rel="noopener noreferrer" class="link-action">
+                <span>View Slides</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+              </a>
+              <a href="https://github.com/abdelkaderelassali" target="_blank" rel="noopener noreferrer" class="link-action">
+                <span>GitHub</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+              </a>
+              <button class="link-action btn-story" data-project="press">
+                <span>Project Story</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 6 -->
+        <div class="project-card" data-category="de">
+          <div class="project-img-wrapper">
+            <img src="screenshots/clean/moodle.jpg" alt="EMSI Summer Competition 1st Prize Winner" loading="lazy"/>
+            <div class="project-badge badge-award">🏆 1st Prize · EMSI Competition</div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span>Moodle</span>
+              <span>Linux</span>
+              <span>DevOps</span>
+              <span>System Tuning</span>
+            </div>
+            <h3 class="project-title">Enterprise LMS Infrastructure &amp; Deployment</h3>
+            <p class="project-desc">
+              Deployed, optimized and secured high-availability Moodle educational infrastructure. 
+              Awarded <strong>1st Prize</strong> at the EMSI Summer Internship Competition for engineering rigor.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/abdelkaderelassali" target="_blank" rel="noopener noreferrer" class="link-action">
+                <span>GitHub</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+              </a>
+              <button class="link-action btn-story" data-project="moodle">
+                <span>Project Story</span>
+                <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK EXPERIENCE SECTION -->
+  <section class="section experience-section" id="experience">
+    <div class="section-container">
+      <h2 class="section-title">Work Experience</h2>
+
+      <div class="timeline">
+        
+        <!-- Timeline Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3 class="timeline-role">AI &amp; Multi-Agent Systems Research Intern</h3>
+              <span class="timeline-date">Stage PFA · 2026</span>
+            </div>
+            <div class="timeline-company">Laboratoire EMSI Recherche &amp; Innovation — Casablanca, Morocco</div>
+            <p class="timeline-subtitle">Cooperative Multi-Agent System for LLM Token Optimization</p>
+            <ul class="timeline-bullets">
+              <li>Architected a cooperative multi-agent system using <strong>LangGraph</strong> and local <strong>Ollama (Llama 3)</strong> coupled with deterministic Python verification routines, cutting token consumption by up to <strong>57%</strong>.</li>
+              <li>Engineered a modular <strong>FastAPI</strong> microservice backend and intuitive web dashboard.</li>
+              <li>Authored <strong>137 comprehensive unit tests</strong>, automated benchmark metrics, and production Docker containerization.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Python</span><span>LangGraph</span><span>Ollama</span><span>Llama 3</span><span>FastAPI</span><span>Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Timeline Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3 class="timeline-role">Software &amp; Infrastructure Engineering Intern <span class="text-gold">(1er Prix 🏆)</span></h3>
+              <span class="timeline-date">Juil. 2025 – Sept. 2025</span>
+            </div>
+            <div class="timeline-company">EMSI Casablanca — Summer Internship Competition</div>
+            <p class="timeline-subtitle">Enterprise LMS Platform Deployment &amp; System Administration</p>
+            <ul class="timeline-bullets">
+              <li>Deployed, configured, and hardened the Moodle pedagogical platform for enterprise-scale online education.</li>
+              <li>Optimized database indexing, session concurrency, and caching for seamless high-load student interactions.</li>
+              <li>Awarded <strong>1st Prize</strong> of the EMSI Summer Internship Competition for technical excellence, architecture quality, and defense presentation.</li>
+            </ul>
+            <div class="timeline-tags">
+              <span>Moodle</span><span>Linux / Bash</span><span>Database Optimization</span><span>Infrastructure</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION SECTION -->
+  <section class="section education-section" id="education">
+    <div class="section-container">
+      <h2 class="section-title">Education</h2>
+
+      <div class="timeline">
+        
+        <!-- Education Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <h3 class="timeline-role">State Engineering Degree in Computer Science (Cycle Ingénieur)</h3>
+              <span class="timeline-date">Oct. 2022 – Present (Graduating 2026)</span>
+            </div>
+            <div class="timeline-company">École Marocaine des Sciences de l’Ingénieur (EMSI) — Casablanca, Morocco</div>
+            <ul class="timeline-bullets">
+              <li><strong>4th &amp; 5th Year (Current)</strong>: Specialization in Artificial Intelligence &amp; Data Science (IADC) — Advanced Machine Learning, Deep Learning, Multi-Agent Systems, NLP, and Distributed Big Data.</li>
+              <li><strong>3rd Year</strong>: Computer Engineering &amp; Networks (IIR) — Advanced Algorithms, OOP, Database Systems, Software Architecture.</li>
+              <li><strong>1st &amp; 2nd Year</strong>: Integrated Preparatory Classes (CP) — Mathematics, Physics, and Core Computer Science fundamentals.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS & CREDENTIALS SECTION -->
+  <section class="section cert-section" id="certifications">
+    <div class="section-container">
+      <h2 class="section-title">Certifications &amp; Credentials</h2>
+      <p class="section-subtitle">My commitment to continuous learning and professional development.</p>
+
+      <div class="cert-grid">
+        
+        <!-- Cert 1 -->
+        <div class="cert-card">
+          <div class="cert-badge-wrapper">
+            <img src="badges/deeplearning_ai.svg" alt="DeepLearning.AI Supervised ML Badge" class="cert-badge-img" loading="lazy"/>
+          </div>
+          <h3 class="cert-title">Supervised Machine Learning: Regression and Classification</h3>
+          <p class="cert-issuer">DeepLearning.AI &amp; Stanford Online</p>
+          <a href="https://coursera.org" target="_blank" rel="noopener noreferrer" class="cert-link">
+            <span>View Credential</span>
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+          </a>
+        </div>
+
+        <!-- Cert 2 -->
+        <div class="cert-card">
+          <div class="cert-badge-wrapper">
+            <img src="badges/google_agile.svg" alt="Google Agile Project Management Badge" class="cert-badge-img" loading="lazy"/>
+          </div>
+          <h3 class="cert-title">Agile Project Management Professional Certificate</h3>
+          <p class="cert-issuer">Google Career Certificates</p>
+          <a href="https://coursera.org" target="_blank" rel="noopener noreferrer" class="cert-link">
+            <span>View Credential</span>
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+          </a>
+        </div>
+
+        <!-- Cert 3 -->
+        <div class="cert-card">
+          <div class="cert-badge-wrapper">
+            <img src="badges/kaggle.svg" alt="Kaggle Machine Learning Competence Badge" class="cert-badge-img" loading="lazy"/>
+          </div>
+          <h3 class="cert-title">Intro to Machine Learning &amp; Pandas Mastery</h3>
+          <p class="cert-issuer">Kaggle Verified</p>
+          <a href="https://kaggle.com" target="_blank" rel="noopener noreferrer" class="cert-link">
+            <span>View Credential</span>
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+          </a>
+        </div>
+
+        <!-- Cert 4 -->
+        <div class="cert-card">
+          <div class="cert-badge-wrapper">
+            <img src="badges/ucsd_bigdata.svg" alt="UC San Diego Big Data Badge" class="cert-badge-img" loading="lazy"/>
+          </div>
+          <h3 class="cert-title">Introduction to Big Data &amp; Distributed Systems</h3>
+          <p class="cert-issuer">University of California San Diego</p>
+          <a href="https://coursera.org" target="_blank" rel="noopener noreferrer" class="cert-link">
+            <span>View Credential</span>
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+          </a>
+        </div>
+
+        <!-- Cert 5 -->
+        <div class="cert-card">
+          <div class="cert-badge-wrapper">
+            <img src="badges/meta.svg" alt="Meta React Native Badge" class="cert-badge-img" loading="lazy"/>
+          </div>
+          <h3 class="cert-title">React Native &amp; Modern Front-End Architecture</h3>
+          <p class="cert-issuer">Meta</p>
+          <a href="https://coursera.org" target="_blank" rel="noopener noreferrer" class="cert-link">
+            <span>View Credential</span>
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+          </a>
+        </div>
+
+        <!-- Cert 6 -->
+        <div class="cert-card">
+          <div class="cert-badge-wrapper">
+            <img src="badges/michigan.svg" alt="University of Michigan Python Badge" class="cert-badge-img" loading="lazy"/>
+          </div>
+          <h3 class="cert-title">Python Data Structures &amp; Web Data Extraction</h3>
+          <p class="cert-issuer">University of Michigan</p>
+          <a href="https://coursera.org" target="_blank" rel="noopener noreferrer" class="cert-link">
+            <span>View Credential</span>
+            <svg viewBox="0 0 24 24" width="13" height="13" fill="currentColor"><path d="M19 19H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT & CALLOUT SECTION -->
+  <section class="section contact-section" id="contact">
+    <div class="section-container">
+      <div class="contact-card-box">
+        <h2 class="contact-heading">Hiring for ML/AI? Let's talk.</h2>
+        <p class="contact-desc">
+          Open to 2026 PFE internships and full-time roles, and always eager to talk multi-agent architectures, LLMs, and data pipelines.
+        </p>
+
+        <div class="contact-btn-row">
+          <a href="mailto:abdoelassali66@gmail.com" class="btn btn-primary btn-glow">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M20 4H4C2.9 4 2 4.9 2 6v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+            Email me
+          </a>
+          <a href="https://linkedin.com/in/abdelkader-elassali" target="_blank" rel="noopener noreferrer" class="btn btn-linkedin">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.63-1.85 3.36-1.85 3.59 0 4.26 2.37 4.26 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45C23.2 24 24 23.23 24 22.28V1.72C24 .77 23.2 0 22.22 0z"/>
+            </svg>
+            LinkedIn
+          </a>
+          <a href="https://github.com/abdelkaderelassali" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.37.6.11.82-.26.82-.58v-2.03c-3.34.72-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.66-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 3-.4c1.02 0 2.04.14 3 .4 2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.22.7.83.58C20.56 21.8 24 17.3 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <p class="copyright">&copy; 2026 Abdelkader Elassali. All Rights Reserved.</p>
+      <p class="credits">Designed with <span class="heart">&hearts;</span> and built with Tailwind CSS &amp; Three.js</p>
+    </div>
+  </footer>
+
+  <!-- FLOATING BACK TO TOP BUTTON -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Back to Top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+      <path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6z"/>
+    </svg>
+  </button>
+
+  <!-- PROJECT STORY MODAL DIALOG -->
+  <div class="modal-overlay" id="storyModal" aria-hidden="true" role="dialog">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close dialog">&times;</button>
+      <div class="modal-header">
+        <span class="modal-tag" id="modalCategory">Multi-Agent &amp; LLM</span>
+        <h3 class="modal-title" id="modalTitle">Project Title</h3>
+      </div>
+      <div class="modal-body" id="modalBody">
+        <!-- Injected via JavaScript -->
+      </div>
+      <div class="modal-footer" id="modalFooter">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
